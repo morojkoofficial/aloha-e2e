@@ -105,16 +105,14 @@ class BasePage:
         Ожидает и возвращает первый найденный элемент внутри другого элемента
         """
         by, value = self._get_locator(platform_locators)
-        # value = value_tpl.format(*fmt_args) if fmt_args else value_tpl
 
-        end_time = time.time() + timeout
-        while time.time() < end_time:
-            try:
-                el = parent_element.find_element(by, value)
-                return el
-            except Exception:
-                time.sleep(0.5)
-        raise TimeoutException(f"Элемент не найден внутри родителя ({by}, '{value}')")
+        try:
+            element = WebDriverWait(self._driver, timeout).until(
+                lambda driver: parent_element.find_element(by, value)
+            )
+            return element
+        except TimeoutException:
+            raise TimeoutException(f"Элемент не найден внутри родителя ({by}, '{value}')")
 
     def _click(
             self,

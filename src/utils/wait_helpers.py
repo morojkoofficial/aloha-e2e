@@ -1,5 +1,7 @@
 import time
 
+from selenium.common import WebDriverException
+
 
 def wait_until(condition_fn, timeout=10, poll_interval=0.5, error_msg="Ошибка ожидания"):
     """
@@ -22,11 +24,14 @@ def wait_until(condition_fn, timeout=10, poll_interval=0.5, error_msg="Ошиб�
     """
 
     end_time = time.time() + timeout
+
     while time.time() < end_time:
         try:
             if condition_fn():
                 return True
-        except Exception:
+        except WebDriverException:
             pass
+
         time.sleep(min(poll_interval, end_time - time.time()))
+
     raise TimeoutError(error_msg)
