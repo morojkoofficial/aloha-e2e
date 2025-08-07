@@ -1,0 +1,50 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+.ENV/
+env.bak/
+venv.bak/
+
+# Pytest cache
+.pytest_cache/
+
+# Pytest HTML and log files
+*.log
+*.html
+*.xml
+
+# Mac system files
+.DS_Store
+
+# Playwright files
+playwright-report/
+test-results/
+playwright/.cache/
+test-output/
+reports/
+
+# pip-tools
+*.txt~
+*.lock
+
+# IDE
+.idea/
+*.iml
+
+# Logs
+*.log
+*.tmp
+
+# Screenshots, videos, traces
+*.png
+*.mp4
+*.webm
+*.zip
+*.har
