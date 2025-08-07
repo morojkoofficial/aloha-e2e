@@ -63,3 +63,8 @@ pip install -r requirements.txt
 ```bash
 pytest -o platform=mac -m smoke
 ```
+
+TODO:
+- Очищение приложений (переустановка)
+- Подключение windows тестов
+- ...
