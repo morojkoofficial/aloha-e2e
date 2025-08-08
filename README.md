@@ -67,4 +67,5 @@ pytest -o platform=mac -m smoke
 TODO:
 - Очищение приложений (переустановка)
 - Подключение windows тестов
+- Подключить парсинг логов --enable-logging и --log-net-log и их проверку после теста
 - ...
