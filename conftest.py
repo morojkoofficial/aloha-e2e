@@ -1,4 +1,5 @@
-import datetime
+import os
+import time
 
 import pytest
 
@@ -19,8 +20,9 @@ def pytest_addoption(parser):
     parser.addini("platform", "Целевая платформа для выполнения тестов", default="mac")
 
 def pytest_configure(config):
-    timestamp = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    config.option.htmlpath = f"reports/report-{timestamp}.html"
+    os.makedirs("reports", exist_ok=True)
+    ts = time.strftime("%Y%m%d-%H%M%S")
+    config.option.htmlpath = f"reports/report-{ts}.html"
 
 @pytest.fixture(scope="session")
 def config(pytestconfig) -> Config:

@@ -62,9 +62,10 @@ def pw_context(driver):
     """
     with sync_playwright() as pw:
         browser = pw.chromium.connect_over_cdp(Cdp.URL)
-
-        if not browser.contexts:
-            raise RuntimeError("Нет доступных контекстов в браузере")
-
-        context = browser.contexts[0]
-        yield context
+        try:
+            if not browser.contexts:
+                raise RuntimeError("Нет доступных контекстов в браузере")
+            context = browser.contexts[0]
+            yield context
+        finally:
+            browser.close()

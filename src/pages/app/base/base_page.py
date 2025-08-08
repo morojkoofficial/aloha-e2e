@@ -1,4 +1,3 @@
-import time
 from typing import List, Union, Tuple, Dict
 
 from appium.webdriver import WebElement
@@ -100,7 +99,7 @@ class BasePage:
         except TimeoutException:
             raise TimeoutException(f"Элементы не найдены ({by}, '{value}')")
 
-    def _find_element_in(self, parent_element: WebElement, platform_locators: dict, timeout: int =DEFAULT_TIMEOUT) -> WebElement:
+    def _find_element_in(self, parent_element: WebElement, platform_locators: dict, timeout: int = DEFAULT_TIMEOUT) -> WebElement:
         """
         Ожидает и возвращает первый найденный элемент внутри другого элемента
         """
