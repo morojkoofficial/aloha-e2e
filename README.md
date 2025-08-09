@@ -65,7 +65,7 @@ pytest -o platform=mac -m smoke
 ```
 
 TODO:
-- Написать свой HybridAlohaDriver, единый фасад appium+playwright. Вообще объеденить адаптеры+драйверы+конфиги в единый alohadriver. 
+- Написать свой HybridAlohaDriver, единый фасад appium+playwright. Вообще объеденить адаптеры+драйверы+конфиги в единый alohadriver. В отдельный репозиторий с своими юнит/интегр тестами на драйвер. 
 - Обмазать логгерами, свои Exceptions вынести
 - Перейти на poetry
 - Очищение приложений (переустановка)
