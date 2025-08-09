@@ -65,6 +65,7 @@ pytest -o platform=mac -m smoke
 ```
 
 TODO:
+- Написать свой HybridAlohaDriver, единый фасад appium+playwright. Вообще объеденить адаптеры+драйверы в единый alohadriver
 - Очищение приложений (переустановка)
 - Подключение windows тестов
 - Подключить парсинг логов --enable-logging и --log-net-log и их проверку после теста
